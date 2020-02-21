@@ -18,9 +18,25 @@ class CategoriesTableSeeder extends Seeder
                 [
                     'name' => 'Web',
                     'slug' => 'categories',
-                    'image_id' => 1
                 ],
                 [
+                    'name' => 'Mobile',
+                    'slug' => 'categories',
+                ],[
+                    'name' => 'Desktop',
+                    'slug' => 'categories',
+
+                ],[
+                    'name' => 'Data Science',
+                    'slug' => 'categories',
+
+                ],[
+                    'name' => 'Data Mining',
+                    'slug' => 'categories',
+
+                ],[
+                    'name' => 'Analysis',
+                    'slug' => 'categories',
 
                 ]
             ]

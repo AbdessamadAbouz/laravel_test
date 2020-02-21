@@ -101,9 +101,11 @@ class CategoriesController extends Controller
         $category->delete();
         $image = Image::where("imageable_id","=",$id)->where("imageable_type","=","category")->first();
         if(!empty($image)){
-            File::delete($image->file_name);
+            File::delete("images/".$image->file_name);
+            $image_del = Image::find($image->id);
+            $image_del->delete();
         }
-        $image->delete();
+        
         return new categories($category);
     }
 }

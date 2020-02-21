@@ -107,9 +107,9 @@ class CoursesController extends Controller
         if(!empty($image))
         {
             File::delete("images/".$image->file_name);
+            $image_del = Image::find($image->id);
+            $image_del->delete();
         }
-        $image_del = Image::find($image->id);
-        $image_del->delete();
         return new courseResource($course);
 
 

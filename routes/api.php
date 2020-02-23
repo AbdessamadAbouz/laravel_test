@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Add new Category
-Route::post("category/Add","CategoriesController@store");
+Route::post("category/add","CategoriesController@store");
 
 //Update Category
 Route::put("category/update/{id}","CategoriesController@update");

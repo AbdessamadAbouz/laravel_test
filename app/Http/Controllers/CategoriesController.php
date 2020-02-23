@@ -39,7 +39,9 @@ class CategoriesController extends Controller
     {
         $category = new Category();
         $category->name = $request->input("name");
-        $category->slug = $request->input("slug");
+        $slug = $request->input("name")." ".time();
+        $slug = Str::slug($slug,"-");
+        $course->slug = $slug;
         if($category->save())
         {
             return new categories($category);
@@ -82,7 +84,6 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->name = $request->input("name");
-        $category->slug = $request->input("slug");
         if($category->save())
         {
             return new categories($category);

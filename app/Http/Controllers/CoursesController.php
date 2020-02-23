@@ -7,6 +7,7 @@ use App\Http\Resources\courses as courseResource;
 use App\Course;
 use App\Image;
 use File;
+use Str;
 
 class CoursesController extends Controller
 {
@@ -41,7 +42,9 @@ class CoursesController extends Controller
     {
         $course = new Course();
         $course->name = $request->input("name");
-        $course->slug = $request->input("slug");
+        $slug = $request->input("name")." ".time();
+        $slug = Str::slug($slug,"-");
+        $course->slug = $slug;
         $course->description = $request->input("description");
         $course->category_id = $request->input("category_id");
         if($course->save())

@@ -45,6 +45,7 @@ class CoursesController extends Controller
         $slug = $request->input("name")." ".time();
         $slug = Str::slug($slug,"-");
         $course->slug = $slug;
+        
         $course->description = $request->input("description");
         $course->category_id = $request->input("category_id");
         if($course->save())
